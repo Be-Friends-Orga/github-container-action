@@ -79,6 +79,7 @@ export class azurecontainerapps {
     private static yamlConfigPath: string;
 
     // Resource properties
+    private static containerName: string;
     private static containerAppName: string;
     private static containerAppExists: boolean;
     private static location: string;
@@ -624,6 +625,10 @@ export class azurecontainerapps {
         } else if (this.shouldCreateOrUpdateContainerAppWithUp) {
             this.commandLineArgs.push(`--source ${this.appSourcePath}`);
             this.commandLineArgs.push(`-l ${this.location}`);
+        }
+
+        if(!this.shouldCreateOrUpdateContainerAppWithUp && !this.util.isNullOrEmpty(this.containerName){
+          this.commandLineArgs.push(`--container-name ${this.containerName}`);
         }
 
     }

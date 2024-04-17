@@ -140,6 +140,11 @@ inputs:
     required: false
     default: false
 
+  containerName:
+    description: |
+       'Used to specify a container name'
+    required: false
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
