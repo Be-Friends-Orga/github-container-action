@@ -627,8 +627,8 @@ export class azurecontainerapps {
             this.commandLineArgs.push(`-l ${this.location}`);
         }
 
-        if(!this.shouldCreateOrUpdateContainerAppWithUp && !this.util.isNullOrEmpty(this.containerName){
-          this.commandLineArgs.push(`--container-name ${this.containerName}`);
+        if(!this.util.isNullOrEmpty(this.containerName)){
+           this.commandLineArgs.push(`--container-name ${this.containerName}`);
         }
 
     }
